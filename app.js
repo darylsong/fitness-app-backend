@@ -26,7 +26,7 @@ app.use("/api/register", registerRouter);
 app.use("/api/users", middleware.userExtractor, exercisesRouter);
 app.use("/api/users", middleware.userExtractor, workoutsRouter);
 
-app.use(middleware.unknownEndpoint);
-app.use(middleware.errorHandler);
+app.use("/api/", middleware.unknownEndpoint);
+app.use("/api/", middleware.errorHandler);
 
 module.exports = app;
